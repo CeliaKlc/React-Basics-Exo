@@ -1,12 +1,12 @@
-function PokemonCard(props) {
+function PokemonCard({pokemon}) {
     return (
       <figure>
-        {(props.imgSrc != null) ? (
-          <img src={props.imgSrc} alt={props.name} />
+        {(pokemon.imgSrc != null) ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
         ) : (
           <p>???</p>
         )}
-        <figcaption>{props.name}</figcaption>
+        <figcaption>{pokemon.name}</figcaption>
       </figure>
     );
 }
