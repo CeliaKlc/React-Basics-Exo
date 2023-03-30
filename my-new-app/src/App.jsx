@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { useState } from 'react'
+import NavBar from './Components/NavBar'
 
 const pokemonList = [
   {
@@ -34,20 +35,10 @@ const pokemonList = [
 function App() {
   const [count, setCount] = useState(0);
 
-  const PreviousPok = () => {
-  if (count>0)  {setCount(count - 1)}
-}
-
-  const NextPok = () => {
-    if (count < pokemonList.length - 1) {setCount(count + 1)}
-  }
-
-
   return (
     <div>
       <PokemonCard pokemon={pokemonList[count]}/>
-      <button onClick={PreviousPok}>Précédant</button>
-      <button onClick={NextPok}>Suivant</button>
+      <NavBar count={count} setCount={setCount} pokemonList={pokemonList} />
     </div>
   );
 }
